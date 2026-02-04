@@ -298,7 +298,8 @@ Analyze the job description and assess: Strong/Moderate/Weak Fit with specific r
               border: 'none',
               fontWeight: '600',
               fontSize: '15px',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              transition: 'transform 0.2s'
             }}
           >
             💬 Ask AI About My Approach
@@ -317,6 +318,30 @@ Analyze the job description and assess: Strong/Moderate/Weak Fit with specific r
             }}
           >
             Assess Role Fit
+          </button>
+          <button
+            onClick={() => window.open('https://sharperstudio.com/portfolio.html', '_blank')}
+            style={{
+              backgroundColor: 'transparent',
+              color: '#888',
+              padding: '14px 28px',
+              borderRadius: '6px',
+              border: '2px solid #444',
+              fontWeight: '600',
+              fontSize: '15px',
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.borderColor = '#10b981';
+              e.target.style.color = '#10b981';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.borderColor = '#444';
+              e.target.style.color = '#888';
+            }}
+          >
+            📁 View Traditional Portfolio
           </button>
         </div>
       </header>
