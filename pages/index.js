@@ -8,6 +8,9 @@ export default function Home() {
   const [fitResult, setFitResult] = useState(null);
   const [expandedSections, setExpandedSections] = useState({});
 
+  // HostGator will serve the static front end. Netlify remains the hidden AI backend for now.
+  const CHAT_API_URL = 'https://tourmaline-mermaid-f53f60.netlify.app/api/chat';
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -50,7 +53,7 @@ Answer questions conversationally and professionally. Keep responses 2-3 paragra
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(CHAT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -89,7 +92,7 @@ STRENGTHS: Enterprise UX, design systems, developer collaboration, board-level l
 Analyze the job description and assess: Strong/Moderate/Weak Fit with specific reasoning.`;
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(CHAT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -320,7 +323,7 @@ Analyze the job description and assess: Strong/Moderate/Weak Fit with specific r
             Assess Role Fit
           </button>
           <button
-            onClick={() => window.open('https://sharperstudio.com/portfolio.html', '_blank')}
+            onClick={() => window.open('/portfolio.html', '_self')}
             style={{
               backgroundColor: 'transparent',
               color: '#888',
