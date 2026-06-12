@@ -9,7 +9,7 @@ export default function Home() {
   const [expandedSections, setExpandedSections] = useState({});
 
   // HostGator will serve the static front end. Netlify remains the hidden AI backend for now.
-  const CHAT_API_URL = 'https://tourmaline-mermaid-f53f60.netlify.app/api/chat';
+  const CHAT_API_URL = 'https://tourmaline-mermaid-f53f60.netlify.app/.netlify/functions/chat';
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
